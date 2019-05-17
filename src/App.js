@@ -17,7 +17,7 @@ import './firebase';
 import App from './container/App';
 
 import { configureStore } from './store';
-//new change
+//new change dev
 const MainApp = () => (
 	<Provider store={configureStore()}>
 		<MuiPickersUtilsProvider utils={MomentUtils}>
