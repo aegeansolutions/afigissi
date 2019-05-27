@@ -73,8 +73,10 @@ export default class UserProfile extends Component {
    }
 
    componentDidMount() {
-      api.get('userManagement.js')
+   
+      api.get('users')
          .then((response) => {
+            console.log(response.data);
             this.setState({ users: response.data });
          })
          .catch(error => {
@@ -85,9 +87,10 @@ export default class UserProfile extends Component {
 	/**
 	 * On Delete
 	 */
-   onDelete(data) {
+   onDelete(data) {    
       this.refs.deleteConfirmationDialog.open();
-      this.setState({ selectedUser: data });
+      this.setState({ selectedUser: data });   
+      
    }
 
 	/**
@@ -259,7 +262,7 @@ export default class UserProfile extends Component {
       return (
          <div className="user-management">
             <Helmet>
-               <title>Reactify | Users Management</title>
+               <title>Αφήγηση | Διαχείριση χρηστών </title>
                <meta name="description" content="Reactify Widgets" />
             </Helmet>
             <PageTitleBar
@@ -275,7 +278,7 @@ export default class UserProfile extends Component {
                      </div>
                      <div>
                         <a href="javascript:void(0)" className="btn-sm btn-outline-default mr-10">Export to Excel</a>
-                        <a href="javascript:void(0)" onClick={() => this.opnAddNewUserModal()} color="primary" className="caret btn-sm mr-10">Add New User <i className="zmdi zmdi-plus"></i></a>
+                        <a href="javascript:void(0)" onClick={() => this.opnAddNewUserModal()} color="primary" className="caret btn-sm mr-10"><IntlMessages id="usermanager.addUser" /> <i className="zmdi zmdi-plus"></i></a>
                      </div>
                   </div>
                   <table className="table table-middle table-hover mb-0">
@@ -292,14 +295,14 @@ export default class UserProfile extends Component {
                                        color="primary"
                                     />
                                  }
-                                 label="All"
+                                 
                               />
                            </th>
-                           <th>User</th>
-                           <th>Email Address</th>
-                           <th>Status</th>
-                           <th>Plans Type</th>
-                           <th>Date Created</th>
+                           <th><IntlMessages id="usermanager.user" /></th>
+                           <th><IntlMessages id="usermanager.email" /></th>
+                           <th><IntlMessages id="usermanager.userstate" /></th>
+                           <th><IntlMessages id="usermanager.usertype" /></th>
+                           <th><IntlMessages id="usermanager.usercreated" /></th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -319,17 +322,13 @@ export default class UserProfile extends Component {
                               </td>
                               <td>
                                  <div className="media">
-                                    {user.avatar !== '' ?
-                                       <img src={user.avatar} alt="user prof" className="rounded-circle mr-15" width="50" height="50" />
-                                       : <Avatar className="mr-15">{user.name.charAt(0)}</Avatar>
-                                    }
                                     <div className="media-body">
-                                       <h5 className="mb-5 fw-bold">{user.name}</h5>
+                                       <h5 className="mb-5 fw-bold">{user.surname +" "+ user.name}</h5>
                                        <Badge color="warning">{user.type}</Badge>
                                     </div>
                                  </div>
                               </td>
-                              <td>{user.emailAddress}</td>
+                              <td>{user.email}</td>
                               <td className="d-flex justify-content-start">
                                  <span className={`badge badge-xs ${user.badgeClass} mr-10 mt-10 position-relative`}>&nbsp;</span>
                                  <div className="status">
@@ -338,7 +337,7 @@ export default class UserProfile extends Component {
                                  </div>
                               </td>
                               <td><span className={`badge ${user.badgeClass} badge-pill`}>{user.accountType}</span></td>
-                              <td>{user.dateCreated}</td>
+                              <td>{user.createdAt}</td>
                               <td className="list-action">
                                  <a href="javascript:void(0)" onClick={() => this.viewUserDetail(user)}><i className="ti-eye"></i></a>
                                  <a href="javascript:void(0)" onClick={() => this.onEditUser(user)}><i className="ti-pencil"></i></a>
@@ -378,8 +377,8 @@ export default class UserProfile extends Component {
             </RctCollapsibleCard>
             <DeleteConfirmationDialog
                ref="deleteConfirmationDialog"
-               title="Are You Sure Want To Delete?"
-               message="This will delete user permanently."
+               title="deletedialog.title"
+               message="giorgos" 
                onConfirm={() => this.deleteUserPermanently()}
             />
             <Modal isOpen={this.state.addNewUserModal} toggle={() => this.onAddUpdateUserModalClose()}>
@@ -399,11 +398,11 @@ export default class UserProfile extends Component {
                </ModalBody>
                <ModalFooter>
                   {editUser === null ?
-                     <Button variant="contained" className="text-white btn-success" onClick={() => this.addNewUser()}>Add</Button>
-                     : <Button variant="contained" color="primary" className="text-white" onClick={() => this.updateUser()}>Update</Button>
+                     <Button variant="contained" className="text-white btn-success" onClick={() => this.addNewUser()}>Προσθήκη</Button>
+                     : <Button variant="contained" color="primary" className="text-white" onClick={() => this.updateUser()}>Ενημέρωση</Button>
                   }
                   {' '}
-                  <Button variant="contained" className="text-white btn-danger" onClick={() => this.onAddUpdateUserModalClose()}>Cancel</Button>
+                  <Button variant="contained" className="text-white btn-danger" onClick={() => this.onAddUpdateUserModalClose()}>Άκυρο</Button>
                </ModalFooter>
             </Modal>
             <Dialog

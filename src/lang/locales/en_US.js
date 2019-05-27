@@ -84,7 +84,7 @@ module.exports = {
    "sidebar.users": "Users",
    "sidebar.userProfile1": "User Profile 1",
    "sidebar.userProfile2": "User Profile 2",
-   "sidebar.userManagement": "User Management",
+   "sidebar.userManagement": "Διαχείριση Χρηστών",
    "sidebar.userProfile": "User Profile",
    "sidebar.userList": "User List",
    "sidebar.calendar": "Calendar",
@@ -760,5 +760,17 @@ module.exports = {
    "sidebar.projects": "projects",
    "sidebar.projectDetail": "project Detail",
    "sidebar.clients": "clients",
-   "sidebar.reports": "reports"
+   "sidebar.reports": "reports",
+   "usermanager.user": "Χρήστης",
+   "usermanager.email": "Διεύθυνση email",
+   "usermanager.usertype": "Τύπος Χρήστη",
+   "usermanager.userstate": "Κατάσταση Χρήστη",
+   "usermanager.usercreated": "Ημερομηνία Δημιουργίας",
+   "usermanager.addUser": "Προσθήκη Χρήστη",
+   "deletedialog.cancel": "Άκυρο",
+   "deletedialog.confirm": "Επιβεβαίωση",
+   "deletedialog.title": "Διαγραφή χρήστη",
+   "deletedialog.contentpre": "Ο/η χρήστης ",
+   "deletedialog.contentpost": "θα διαγραφεί μόνιμα! Θέλετε να συνεχίσετε;",
+   
 }

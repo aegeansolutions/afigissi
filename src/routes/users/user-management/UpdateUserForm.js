@@ -7,7 +7,7 @@ import { Form, FormGroup, Label, Input } from 'reactstrap';
 const UpdateUserForm = ({ user, onUpdateUserDetail }) => (
     <Form>
         <FormGroup>
-            <Label for="userName">Name</Label>
+            <Label for="userName">Ονομα</Label>
             <Input
                 type="text"
                 name="userName"

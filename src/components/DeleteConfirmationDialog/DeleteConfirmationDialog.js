@@ -8,6 +8,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
+// intl messages
+import IntlMessages from 'Util/IntlMessages';
 
 class DeleteConfirmationDialog extends Component {
 
@@ -34,19 +36,13 @@ class DeleteConfirmationDialog extends Component {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
          >
-            <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+            <DialogTitle id="alert-dialog-title"><IntlMessages id={this.props.title} /></DialogTitle>
             <DialogContent>
-               <DialogContentText id="alert-dialog-description">
-                  {message}
-               </DialogContentText>
+               <DialogContentText id="alert-dialog-description"><IntlMessages id="deletedialog.contentpre" />{this.props.message} <IntlMessages id="deletedialog.contentpost" /></DialogContentText>
             </DialogContent>
             <DialogActions>
-               <Button onClick={() => this.close()} className="btn-danger text-white">
-                  Cancel
-               </Button>
-               <Button onClick={onConfirm} className="btn-primary text-white" autoFocus>
-                  Yes
-               </Button>
+               <Button onClick={() => this.close()} className="btn-danger text-white"><IntlMessages id="deletedialog.cancel" /> </Button>
+               <Button onClick={onConfirm} className="btn-primary text-white" autoFocus><IntlMessages id="deletedialog.confirm" /></Button>
             </DialogActions>
          </Dialog>
       );

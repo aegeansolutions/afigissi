@@ -7,12 +7,12 @@ import { Form, FormGroup, Label, Input } from 'reactstrap';
 const AddNewUserForm = ({ addNewUserDetails, onChangeAddNewUserDetails }) => (
     <Form>
         <FormGroup>
-            <Label for="userName">Name</Label>
+            <Label for="userName">Όνομααααα</Label>
             <Input
                 type="text"
                 name="userName"
                 id="userName"
-                placeholder="Enter Name"
+                placeholder="Ονομα"
                 value={addNewUserDetails.name}
                 onChange={(e) => onChangeAddNewUserDetails('name', e.target.value)}
             />

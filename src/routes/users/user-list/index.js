@@ -29,7 +29,7 @@ export default class UserComponent extends Component {
 
    // get users
    getUsers() {
-      api.get('usersList.js')
+      api.get('user.js')
          .then((response) => {
             this.setState({ users: response.data });
          })
