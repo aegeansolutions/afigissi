@@ -132,6 +132,7 @@ class Signin extends Component {
                                  <i className="zmdi zmdi-github-alt"></i>
                               </Fab>
                               <p className="text-muted">By signing up you agree to {AppConfig.brandName}</p>
+                              <p className="text-muted"><a href="/forgot-password">Χάσατε το συνθηματικό σας;</a></p>
                               <p><a target="_blank" href="#/terms-condition" className="text-muted">Terms of Service</a></p>
                            </div>
                         </div>

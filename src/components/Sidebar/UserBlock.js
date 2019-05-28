@@ -120,7 +120,7 @@ class UserBlock extends Component {
 									</Link>
 								</li>
 								<li className="border-top">
-									<a href="javascript:void(0)">
+									<a href="javascript:void(0)" onClick={() => this.logoutUser()}>
 										<i className="zmdi zmdi-power text-danger mr-3"></i>
 										<IntlMessages id="widgets.logOut" />
 									</a>

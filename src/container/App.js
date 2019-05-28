@@ -94,14 +94,10 @@ class App extends Component {
             <Route path="/agency" component={AgencyLayout} />
             <Route path="/boxed" component={RctBoxedLayout} />
             <Route path="/dashboard" component={CRMLayout} />
-            <Route path="/signin" component={AppSignIn} />
-            <Route path="/signup" component={AppSignUp} />
-            <Route path="/session/login" component={AsyncSessionLoginComponent} />
-            <Route path="/session/register" component={AsyncSessionRegisterComponent} />
+            <Route path="/signin" component={AsyncSessionLoginComponent} />
+            <Route path="/signup" component={AsyncSessionRegisterComponent} />            
             <Route path="/session/lock-screen" component={AsyncSessionLockScreenComponent} />
-            <Route
-               path="/session/forgot-password"
-               component={AsyncSessionForgotPasswordComponent}
+            <Route path="/forgot-password"component={AsyncSessionForgotPasswordComponent}
             />
             <Route path="/session/404" component={AsyncSessionPage404Component} />
             <Route path="/session/500" component={AsyncSessionPage500Component} />

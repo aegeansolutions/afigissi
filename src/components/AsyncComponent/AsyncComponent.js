@@ -72,12 +72,6 @@ const AsyncSessionRegisterComponent = Loadable({
    loading: () => <RctPageLoader />,
 });
 
-// Session Lock Screen
-const AsyncSessionLockScreenComponent = Loadable({
-   loader: () => import("Routes/session/lock-screen"),
-   loading: () => <RctPageLoader />,
-});
-
 // Session Forgot Password
 const AsyncSessionForgotPasswordComponent = Loadable({
    loader: () => import("Routes/session/forgot-password"),
@@ -108,7 +102,6 @@ export {
    AsyncUsersListComponent,
    AsyncSessionLoginComponent,
    AsyncSessionRegisterComponent,
-   AsyncSessionLockScreenComponent,
    AsyncSessionForgotPasswordComponent,
    AsyncSessionPage404Component,
    AsyncSessionPage500Component//,

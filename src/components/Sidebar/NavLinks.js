@@ -67,27 +67,7 @@ export default {
          "menu_icon": "zmdi zmdi-time-interval",
          "type_multi": null,
          "new_item": false,
-         "child_routes": [
-            {
-               "path": "/session/login",
-               "new_item": false,
-               "menu_title": "sidebar.login"
-            },
-            {
-               "path": "/session/register",
-               "new_item": false,
-               "menu_title": "sidebar.register"
-            },
-            {
-               "path": "/session/lock-screen",
-               "new_item": false,
-               "menu_title": "sidebar.lockScreen"
-            },
-            {
-               "path": "/session/forgot-password",
-               "new_item": false,
-               "menu_title": "sidebar.forgotPassword"
-            },
+         "child_routes": [                                  
             {
                "path": "/session/404",
                "new_item": false,
