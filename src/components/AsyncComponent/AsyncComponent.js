@@ -60,6 +60,44 @@ const AsyncUserManagementComponent = Loadable({
    loading: () => <RctPageLoader />,
 });
 
+// Session Login
+
+const AsyncSessionLoginComponent = Loadable({
+   loader: () => import("Routes/session/login"),
+   loading: () => <RctPageLoader />,
+});
+// Session Register
+const AsyncSessionRegisterComponent = Loadable({
+   loader: () => import("Routes/session/register"),
+   loading: () => <RctPageLoader />,
+});
+
+// Session Lock Screen
+const AsyncSessionLockScreenComponent = Loadable({
+   loader: () => import("Routes/session/lock-screen"),
+   loading: () => <RctPageLoader />,
+});
+
+// Session Forgot Password
+const AsyncSessionForgotPasswordComponent = Loadable({
+   loader: () => import("Routes/session/forgot-password"),
+   loading: () => <RctPageLoader />,
+});
+
+// Session Page 404
+const AsyncSessionPage404Component = Loadable({
+   loader: () => import("Routes/session/404"),
+   loading: () => <RctPageLoader />,
+});
+
+// Session Page 500
+const AsyncSessionPage500Component = Loadable({
+   loader: () => import("Routes/session/500"),
+   loading: () => <RctPageLoader />,
+});
+
+
+
 export {
    AsyncEcommerceDashboardComponent,
    AsyncSaasDashboardComponent,
@@ -67,7 +105,13 @@ export {
    AsyncNewsDashboardComponent,
    AsyncCrmComponent,
    AsyncUserManagementComponent,
-   AsyncUsersListComponent//,
+   AsyncUsersListComponent,
+   AsyncSessionLoginComponent,
+   AsyncSessionRegisterComponent,
+   AsyncSessionLockScreenComponent,
+   AsyncSessionForgotPasswordComponent,
+   AsyncSessionPage404Component,
+   AsyncSessionPage500Component//,
   // AsyncUserProfileComponent,
    //AsyncUserProfile1Component   
 };

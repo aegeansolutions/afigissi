@@ -28,13 +28,26 @@ import {
     logoutUserFromFirebaseFailure
 } from 'Actions';
 
+import api from 'Api';
+
 /**
  * Sigin User With Email and Password Request
  */
-const signInUserWithEmailPasswordRequest = async (email, password) =>
+const signInUserWithEmailPasswordRequest = async (email, password) => await api.post('login',{
+    username: email,
+    password: password
+  })
+.then(response => 
+    response.data
+)
+.catch(error => {
+    //console.log(error);
+});
+
+/*async (email, password) =>
     await auth.signInWithEmailAndPassword(email, password)
         .then(authUser => authUser)
-        .catch(error => error);
+        .catch(error => error);*/
 
 /**
  * Signin User With Facebook Request
@@ -90,8 +103,8 @@ function* signInUserWithEmailPassword({ payload }) {
     const { history } = payload;
     try {
         const signInUser = yield call(signInUserWithEmailPasswordRequest, email, password);
-        if (signInUser.message) {
-            yield put(signinUserFailure(signInUser.message));
+        if (signInUser.error) {
+            yield put(signinUserFailure(signInUser.error));
         } else {
             localStorage.setItem('user_id', signInUser.uid);
             yield put(signinUserSuccess(signInUser));

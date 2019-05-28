@@ -61,6 +61,46 @@ export default {
                "menu_title": "sidebar.userList"
             }
          ]
-      }
+      },
+	   {
+         "menu_title": "sidebar.session",
+         "menu_icon": "zmdi zmdi-time-interval",
+         "type_multi": null,
+         "new_item": false,
+         "child_routes": [
+            {
+               "path": "/session/login",
+               "new_item": false,
+               "menu_title": "sidebar.login"
+            },
+            {
+               "path": "/session/register",
+               "new_item": false,
+               "menu_title": "sidebar.register"
+            },
+            {
+               "path": "/session/lock-screen",
+               "new_item": false,
+               "menu_title": "sidebar.lockScreen"
+            },
+            {
+               "path": "/session/forgot-password",
+               "new_item": false,
+               "menu_title": "sidebar.forgotPassword"
+            },
+            {
+               "path": "/session/404",
+               "new_item": false,
+               "menu_title": "sidebar.404"
+               
+            },
+            {
+               "path": "/session/500",
+               "new_item": false,
+               "menu_title": "sidebar.500"
+            }
+         ]
+      }	  
+	  
    ]
 }
