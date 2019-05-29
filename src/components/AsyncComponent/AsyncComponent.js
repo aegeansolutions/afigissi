@@ -36,23 +36,12 @@ const AsyncCrmComponent = Loadable({
    loader: () => import("Routes/crm/dashboard"),
    loading: () => <RctPageLoader />,
 });
-// Users List
-const AsyncUsersListComponent = Loadable({
-   loader: () => import("Routes/users/user-list"),
-   loading: () => <RctPageLoader />,
-});
 
-// Users Profile
-/*const AsyncUserProfileComponent = Loadable({
+// Users Profile 
+const AsyncUserProfileComponent = Loadable({
    loader: () => import("Routes/users/user-profile"),
    loading: () => <RctPageLoader />,
 });
-
-// Users Profile 1
-const AsyncUserProfile1Component = Loadable({
-   loader: () => import("Routes/users/user-profile-1"),
-   loading: () => <RctPageLoader />,
-});*/
 
 // Users Management
 const AsyncUserManagementComponent = Loadable({
@@ -99,12 +88,10 @@ export {
    AsyncNewsDashboardComponent,
    AsyncCrmComponent,
    AsyncUserManagementComponent,
-   AsyncUsersListComponent,
    AsyncSessionLoginComponent,
    AsyncSessionRegisterComponent,
    AsyncSessionForgotPasswordComponent,
    AsyncSessionPage404Component,
-   AsyncSessionPage500Component//,
-  // AsyncUserProfileComponent,
-   //AsyncUserProfile1Component   
+   AsyncSessionPage500Component,
+   AsyncUserProfileComponent
 };

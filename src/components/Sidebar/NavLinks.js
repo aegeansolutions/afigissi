@@ -39,26 +39,16 @@ export default {
          "menu_icon": "zmdi zmdi-accounts",
          "type_multi": null,
          "new_item": false,
-         "child_routes": [
-            /*{
-               "path": "/app/users/user-profile-1",
-               "new_item": false,
-               "menu_title": "sidebar.userProfile1"
-            },
+         "child_routes": [            
             {
                "path": "/app/users/user-profile",
                "new_item": false,
-               "menu_title": "sidebar.userProfile2"
-            },*/
+               "menu_title": "sidebar.userProfile"
+            },
             {
                "path": "/app/users/user-management",
                "new_item": false,
                "menu_title": "sidebar.userManagement"
-            },
-            {
-               "path": "/app/users/user-list",
-               "new_item": false,
-               "menu_title": "sidebar.userList"
             }
          ]
       },
