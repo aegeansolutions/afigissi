@@ -16,7 +16,7 @@ const AddNewUserForm = ({ addNewUserDetails, onChangeAddNewUserDetails }) => (
                 id="userName"
                 placeholder="userform.surname"
                 value={addNewUserDetails.surname}
-                onChange={(e) => onChangeAddNewUserDetails('name', e.target.value)}
+                onChange={(e) => onChangeAddNewUserDetails('surname', e.target.value)}
             />
         </FormGroup>
         <FormGroup>
@@ -39,8 +39,8 @@ const AddNewUserForm = ({ addNewUserDetails, onChangeAddNewUserDetails }) => (
                 name="userEmail"
                 id="userEmail"
                 placeholder="Enter Email"
-                value={addNewUserDetails.emailAddress}
-                onChange={(e) => onChangeAddNewUserDetails('emailAddress', e.target.value)}
+                value={addNewUserDetails.email}
+                onChange={(e) => onChangeAddNewUserDetails('email', e.target.value)}
             />
         </FormGroup>
         <FormGroup>

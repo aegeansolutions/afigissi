@@ -55,10 +55,11 @@ export default class UserProfile extends Component {
       addNewUserModal: false, // add new user form modal
       addNewUserDetail: {
          id: '',
+         surname: '',
          name: '',
          avatar: '',
          type: '',
-         emailAddress: '',
+         email: '',
          status: 'Active',
          lastSeen: '',
          accountType: '',
@@ -76,7 +77,6 @@ export default class UserProfile extends Component {
    
       api.get('users')
          .then((response) => {
-            console.log(response.data);
             this.setState({ users: response.data });
          })
          .catch(error => {
@@ -377,7 +377,7 @@ export default class UserProfile extends Component {
             <DeleteConfirmationDialog
                ref="deleteConfirmationDialog"
                title="deletedialog.title"
-               message="deletedialog.title" 
+               message={selectedUser?selectedUser.surname +" "+ selectedUser.name:""} 
                onConfirm={() => this.deleteUserPermanently()}
             />
             <Modal isOpen={this.state.addNewUserModal} toggle={() => this.onAddUpdateUserModalClose()}>
