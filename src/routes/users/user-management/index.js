@@ -87,10 +87,9 @@ export default class UserProfile extends Component {
 	/**
 	 * On Delete
 	 */
-   onDelete(data) {    
+   onDelete(data) {
       this.refs.deleteConfirmationDialog.open();
-      this.setState({ selectedUser: data });   
-      
+      this.setState({ selectedUser: data });
    }
 
 	/**
@@ -378,13 +377,13 @@ export default class UserProfile extends Component {
             <DeleteConfirmationDialog
                ref="deleteConfirmationDialog"
                title="deletedialog.title"
-               message="giorgos" 
+               message="deletedialog.title" 
                onConfirm={() => this.deleteUserPermanently()}
             />
             <Modal isOpen={this.state.addNewUserModal} toggle={() => this.onAddUpdateUserModalClose()}>
                <ModalHeader toggle={() => this.onAddUpdateUserModalClose()}>
                   {editUser === null ?
-                     'Add New User' : 'Update User'
+                     <IntlMessages id="userform.adduser" /> : <IntlMessages id="userform.edituser" />
                   }
                </ModalHeader>
                <ModalBody>
@@ -398,11 +397,11 @@ export default class UserProfile extends Component {
                </ModalBody>
                <ModalFooter>
                   {editUser === null ?
-                     <Button variant="contained" className="text-white btn-success" onClick={() => this.addNewUser()}>Προσθήκη</Button>
-                     : <Button variant="contained" color="primary" className="text-white" onClick={() => this.updateUser()}>Ενημέρωση</Button>
+                     <Button variant="contained" className="text-white btn-success" onClick={() => this.addNewUser()}><IntlMessages id="userform.add" /> </Button>
+                     : <Button variant="contained" color="primary" className="text-white" onClick={() => this.updateUser()}><IntlMessages id="userform.update" /></Button>
                   }
                   {' '}
-                  <Button variant="contained" className="text-white btn-danger" onClick={() => this.onAddUpdateUserModalClose()}>Άκυρο</Button>
+                  <Button variant="contained" className="text-white btn-danger" onClick={() => this.onAddUpdateUserModalClose()}><IntlMessages id="userform.cancel" /></Button>
                </ModalFooter>
             </Modal>
             <Dialog
@@ -416,10 +415,11 @@ export default class UserProfile extends Component {
                            <div className="media pull-left">
                               <img src={selectedUser.avatar} alt="user prof" className="rounded-circle mr-15" width="50" height="50" />
                               <div className="media-body">
-                                 <p>Name: <span className="fw-bold">{selectedUser.name}</span></p>
-                                 <p>Email: <span className="fw-bold">{selectedUser.emailAddress}</span></p>
-                                 <p>Type: <span className="badge badge-warning">{selectedUser.type}</span></p>
-                                 <p>Account Type: <span className={`badge ${selectedUser.badgeClass} badge-pill`}>{selectedUser.accountType}</span></p>
+                                 <p><IntlMessages id="userform.surname" />: <span className="fw-bold">{selectedUser.surname}</span></p>
+                                 <p><IntlMessages id="userform.name" />: <span className="fw-bold">{selectedUser.name}</span></p>
+                                 <p>Email: <span className="fw-bold">{selectedUser.email}</span></p>
+                                 <p><IntlMessages id="userform.accountstate" />: <span className="badge badge-warning">{selectedUser.type}</span></p>
+                                 <p><IntlMessages id="userform.accounttype" />: <span className={`badge ${selectedUser.badgeClass} badge-pill`}>{selectedUser.accountType}</span></p>
                                  <p>Status: {selectedUser.status}</p>
                                  <p>Last Seen: {selectedUser.lastSeen}</p>
                               </div>

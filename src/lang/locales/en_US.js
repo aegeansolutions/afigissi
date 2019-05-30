@@ -769,5 +769,14 @@ module.exports = {
    "deletedialog.title": "Διαγραφή χρήστη",
    "deletedialog.contentpre": "Ο/η χρήστης ",
    "deletedialog.contentpost": "θα διαγραφεί μόνιμα! Θέλετε να συνεχίσετε;",
+   "userform.surname": "Επίθετο",
+   "userform.name": "Όνομα",
+   "userform.accounttype": "Τύπος",
+   "userform.accountstate": "Κατάσταση",
+   "userform.adduser": "Προσθήκη Χρήστη",
+   "userform.edituser": "Επεξεργασία Χρήστη",
+   "userform.add": "Προσθήκη",
+   "userform.update": "Ενημέρωση",
+   "userform.cancel": "Άκυρο",
    
 }
