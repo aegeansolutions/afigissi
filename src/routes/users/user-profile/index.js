@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import { Helmet } from "react-helmet";
+import { connect } from "react-redux";
 // Components
 import Profile from './component/Profile';
 import EmailPrefrences from './component/EmailPrefrences';
@@ -32,7 +33,7 @@ function TabContainer(props) {
    );
 }
 
-export default class UserProfile extends Component {
+class UserProfile extends Component {
 
    state = {
       activeTab: this.props.location.state ? this.props.location.state.activeTab : 0
@@ -44,6 +45,7 @@ export default class UserProfile extends Component {
 
    render() {
       const { activeTab } = this.state;
+      console.log(this.props.user)
       return (
          <div className="userProfile-wrapper">
             <Helmet>
@@ -52,7 +54,7 @@ export default class UserProfile extends Component {
             </Helmet>
             <PageTitleBar title={<IntlMessages id="sidebar.userProfile" />} match={this.props.match} />
             <RctCard>
-               <UserBlock />
+               <UserBlock/>
                <div className="rct-tabs">
                   <AppBar position="static">
                      <Tabs
@@ -102,3 +104,10 @@ export default class UserProfile extends Component {
       );
    }
 }
+
+const mapStateToProps = ({authUser}) => {
+   const { user } = authUser;
+   return { user };
+};
+
+export default connect(mapStateToProps)(UserProfile);
